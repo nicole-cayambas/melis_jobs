@@ -1,0 +1,40 @@
+{
+	"name": "melisplatform/melis-platform-skeleton",
+	"description": "Melis Platform Skeleton",
+	"type": "project",
+	"license": "OSL-3.0",
+	"keywords": [
+		"melis",
+		"melisplatform",
+		"platform",
+		"zf2",
+		"laminas",
+		"mvc",
+		"framework"
+	],
+	"require": {
+		"php": "^7.3|^8.0",
+		"melisplatform/melis-asset-manager": "^5.0",
+		"melisplatform/melis-composerdeploy": "^5.0",
+		"melisplatform/melis-core": "^5.0",
+		"melisplatform/melis-dbdeploy": "^5.0",
+		"melisplatform/melis-installer": "^5.0",
+		"melisplatform/melis-marketplace": "^5.0"
+	},
+	"scripts": {
+		"post-update-cmd": [
+			"MelisCore\\ModuleComposerScript::executeScripts",
+			"MelisDbDeploy\\DbDeployOnComposerUpdate::postUpdate"
+		],
+		"development-disable": "laminas-development-mode disable",
+		"development-enable": "laminas-development-mode enable",
+		"development-status": "laminas-development-mode status"
+	},
+	"config": {
+		"platform-check": false,
+		"allow-plugins": {
+			"symfony/flex": false,
+			"symfony/runtime": true
+		}
+	}
+}

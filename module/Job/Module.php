@@ -29,6 +29,12 @@ class Module
                     // attach listeners for Melis
                 }
         }
+        $eventManager->attach(MvcEvent::EVENT_DISPATCH_ERROR, function ($e) {
+            dump($e);
+        });
+        $eventManager->attach(MvcEvent::EVENT_RENDER_ERROR, function ($e) {
+            dump($e);
+        });
     }
 
     public function getConfig()

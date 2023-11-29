@@ -34,7 +34,8 @@ return [
     ],
     'controllers' => [
         'invokables' => [
-            'Job\Controller\List' => Job\Controller\ListController::class
+            'Job\Controller\List' => Job\Controller\ListController::class,
+            'Job\Controller\Properties' => Job\Controller\PropertiesController::class,
         ]
     ],
     'service_manager' => [

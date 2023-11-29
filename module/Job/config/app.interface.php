@@ -35,6 +35,15 @@ return [
                 ],
                 'css' => [
 
+                ],
+                'build' => [
+                    'disable_bundle' => true,
+                    'css' => [
+                        '/NicoleBookmark/build/css/bundle.css',
+                    ],
+                    'js' => [
+                        '/NicoleBookmark/build/js/bundle.js',
+                    ]
                 ]
             ],
             'interface' => [
@@ -73,8 +82,37 @@ return [
                                 'module' => 'Job',
                                 'controller' => 'List',
                                 'action' => 'render-tool-table-content',
+                            ],
+                            'interface' => [
+                                'job_tool_list_modal' => [
+                                    'conf' => [
+                                        'id' => 'id_job_tool_modal',
+                                        'melisKey' => 'job_tool_list_modal',
+                                        'name' => 'job_tool_list_modal',
+                                    ],
+                                    'forward' => [
+                                        'module' => 'Job',
+                                        'controller' => 'List',
+                                        'action' => 'render-table-modal',
+                                    ],
+                                    'interface' => [
+                                        'job_tool_list_form' => [
+                                            'conf' => [
+                                                'id' => 'id_job_tool_form',
+                                                'melisKey' => 'job_tool_list_form',
+                                                'name' => 'tr_job_tool_list_form_properties',
+                                                'icon' => 'fa fa-user'
+                                            ],
+                                            'forward' => [
+                                                'module' => 'Job',
+                                                'controller' => 'Properties',
+                                                'action' => 'render-tool-form',
+                                            ]
+                                        ]
+                                    ]
+                                ],
                             ]
-                        ]
+                        ],
                     ]
                 ]
             ]

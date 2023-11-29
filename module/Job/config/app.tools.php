@@ -85,6 +85,80 @@ return [
                             ],
                         ]
                     ],
+                    'forms' => [
+                        'job_property_form' => [
+                            'attributes' => [
+                                'name' => 'jobForm',
+                                'id' => 'jobForm',
+                                'method' => 'POST',
+                                'action' => '',
+                            ],
+                            'hyrdator' => 'Laminas\Hydrator\ArraySerializableHydrator',
+                            'elements' => [
+                                [
+                                    'spec' => [
+                                        'name' => 'id',
+                                        'type' => 'MelisText',
+                                        'options' => [
+                                            'label' => 'tr_job_input_id',
+                                            'tooltip' => 'tr_job_input_id_tooltip',
+                                        ],
+                                        'attributes' => [
+                                            'id' => 'id',
+                                            'class' => 'form-control',
+                                            'required' => false,
+                                            'disabled' => 'disabled'
+                                        ],
+                                    ]
+                                ],
+                                [
+                                    'spec' => [
+                                        'name' => 'job_title',
+                                        'type' => 'MelisText',
+                                        'options' => [
+                                            'label' => 'tr_job_input_title',
+                                            'tooltip' => 'tr_job_input_title_tooltip',
+                                        ],
+                                        'attributes' => [
+                                            'id' => 'job_title',
+                                            'class' => 'form-control',
+                                            'required' => true,
+                                        ],
+                                    ]
+                                ],
+                                [
+                                    'spec' => [
+                                        'name' => 'job_desc',
+                                        'type' => 'MelisText',
+                                        'options' => [
+                                            'label' => 'tr_job_input_description',
+                                            'tooltip' => 'tr_job_input_description_tooltip',
+                                        ],
+                                        'attributes' => [
+                                            'id' => 'job_desc',
+                                            'class' => 'form-control',
+                                            'required' => false,
+                                        ],
+                                    ]
+                                ],
+                                [
+                                    'spec' => [
+                                        'name' => 'location',
+                                        'type' => 'MelisText',
+                                        'options' => [
+                                            'label' => 'tr_job_input_location',
+                                            'tooltip' => 'tr_job_input_location_tooltip',
+                                        ],
+                                        'attributes' => [
+                                            'id' => 'location',
+                                            'class' => 'form-control',
+                                            'required' => false,
+                                        ],
+                                    ]
+                                ],
+                            ]
+                        ]
+                    ]
                 ]
             ]
         ]

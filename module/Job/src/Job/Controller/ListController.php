@@ -63,6 +63,12 @@ class ListController extends MelisAbstractActionController
         return $view;
     }
 
+    public function renderTableModalAction()
+    {
+        $view = new ViewModel();
+        return $view;
+    }
+
     public function getListAction()
     {
         $melisTool = $this->getServiceManager()->get('MelisCoreTool');

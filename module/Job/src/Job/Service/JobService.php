@@ -1,6 +1,7 @@
 <?php
 
 namespace Job\Service;
+
 use MelisCore\Service\MelisGeneralService;
 
 class JobService extends MelisGeneralService
@@ -25,5 +26,20 @@ class JobService extends MelisGeneralService
         $arrayParameters['results'] = $list;
         $arrayParameters = $this->sendEvent('job_service_get_list_end', $arrayParameters);
         return $arrayParameters['results'];
+    }
+
+    public function saveItem($data, $id = null)
+    {
+        $arrayParameters = $this->makeArrayFromParameters(__METHOD__, func_get_args());
+        $arrayParameters = $this->sendEvent('job_service_save_item_start', $arrayParameters);
+
+        if ($data) {
+            $jobTable = $this->getServiceManager()->get('JobTable');
+            $res = $jobTable->save($arrayParameters['data'], $arrayParameters['id']);
+        }
+        $arrayParameters['result'] = $res;
+        $arrayParameters = $this->sendEvent('job_service_save_item_end', $arrayParameters);
+
+        return $arrayParameters['result'];
     }
 }

@@ -66,6 +66,7 @@ class ListController extends MelisAbstractActionController
     public function renderTableModalAction()
     {
         $view = new ViewModel();
+        $view->id = $this->params()->fromQuery('id', 'add');
         return $view;
     }
 

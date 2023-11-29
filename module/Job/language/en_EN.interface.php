@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'tr_job_title' => 'Jobs',
-    'tr_job_tool_title' => 'Jobs',
-    'tr_job_tool_list_header_title' => 'Jobs',
+    'tr_job_title' => 'Job',
+    'tr_job_tool_title' => 'Job',
+    'tr_job_tool_list_header_title' => 'Job',
     'tr_job_tool_list_header_description' => 'Jobs to display in site',
     'tr_job_tool_list_form_properties' => 'Job',
     'tr_job_tool_add_btn' => 'Add Job',
@@ -22,4 +22,9 @@ return [
     'tr_job_input_created_at' => 'Created At',
     'tr_job_input_updated_at' => 'Update At',
     'tr_job_input_posted_at' => 'Posted At',
+
+    // messages 
+    'tr_job_unable_to_save' => 'Unable to save Job',
+    'tr_job_create_success' => 'Successfully created Job',
+    'tr_job_save_success' => 'Successfully saved Job',
 ];

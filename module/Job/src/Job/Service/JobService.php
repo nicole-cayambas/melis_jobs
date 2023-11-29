@@ -11,8 +11,8 @@ class JobService extends MelisGeneralService
         $arrayParameters = $this->makeArrayFromParameters(__METHOD__, func_get_args());
         $arrayParameters = $this->sendEvent('job_service_get_list_start', $arrayParameters);
 
-        $inquiryTable = $this->getServiceManager()->get('JobTable');
-        $list = $inquiryTable->getList(
+        $jobTable = $this->getServiceManager()->get('JobTable');
+        $list = $jobTable->getList(
             $arrayParameters['start'],
             $arrayParameters['limit'],
             $arrayParameters['searchKeys'],
@@ -40,6 +40,19 @@ class JobService extends MelisGeneralService
         $arrayParameters['result'] = $res;
         $arrayParameters = $this->sendEvent('job_service_save_item_end', $arrayParameters);
 
+        return $arrayParameters['result'];
+    }
+
+    public function deleteItem($id)
+    {
+        $arrayParameters = $this->makeArrayFromParameters(__METHOD__, func_get_args());
+        $arrayParameters = $this->sendEvent('job_service_delete_item_start', $arrayParameters);
+
+        $jobTable = $this->getServiceManager()->get('JobTable');
+        $res = $jobTable->deleteById($arrayParameters['id']);
+
+        $arrayParameters['result'] = $res;
+        $arrayParameters = $this->sendEvent('job_service_delete_item_end', $arrayParameters);
         return $arrayParameters['result'];
     }
 }

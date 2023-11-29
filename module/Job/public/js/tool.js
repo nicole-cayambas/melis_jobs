@@ -2,19 +2,60 @@ $(function () {
     $("body").on("click", "#btnAddJob", function () {
         modalUrl = '/melis/MelisCore/MelisGenericModal/emptyGenericModal';
         melisHelper.createModal(
-            "id_job_tool_modal",             // zoneId,
-            "job_tool_list_modal",           // melisKey,
+            "id_job_tool_modal",        // zoneId,
+            "job_tool_list_modal",      // melisKey,
+            false,                      // hasCloseBtn,
+            {},                         // parameters,
+            modalUrl,                   // modalUrl,
+                                        // callback,
+                                        // modalBackDrop
+        );
+    });
+
+    $("body").on("click", "#btnEditJob", function () {
+        const id = $(this).parents("tr").attr("id");
+        modalUrl = '/melis/MelisCore/MelisGenericModal/emptyGenericModal';
+        melisHelper.createModal(
+            "id_job_tool_modal",            // zoneId,
+            "job_tool_list_modal",          // melisKey,
             false,                          // hasCloseBtn,
-            {},                             // parameters,
+            {id : id},                      // parameters,
             modalUrl,                       // modalUrl,
                                             // callback,
                                             // modalBackDrop
         );
     });
 
+    $('body').on("click", "#btnDeleteJob", function () {
+        const id = $(this).parents("tr").attr("id");
+        melisCoreTool.confirm(
+            translations.tr_job_common_button_yes, // textOk
+            translations.tr_job_common_button_no, // textNo
+            translations.tr_job_delete_title, // title
+            translations.tr_job_delete_confirm_msg, // msg
+            // callBackOnYes
+            // callBackOnNo
+            function(data) {
+                $.ajax({
+                    type        : 'GET',
+                    url         : '/melis/Job/List/deleteItem?id='+id,
+                    dataType    : 'json',
+                    encode		: true,
+                    success		: function(data){
+                        // refresh the table after deleting an item
+                        melisHelper.zoneReload("id_job_tool_table", "job_tool_list_table");
+
+                        // Notifications
+                        melisHelper.melisOkNotification(data.textTitle, data.textMessage);
+
+                        
+                    }
+                });
+            });
+    })
+
     $('body').on("click", "#btnSaveJob", function () {
         const id = $(this).data('id');
-        console.log($('form#jobForm'));
         submitJobForm(id, $('form#jobForm')[0]);
     })
 

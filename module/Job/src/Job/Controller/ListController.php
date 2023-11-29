@@ -113,4 +113,23 @@ class ListController extends MelisAbstractActionController
             'data' => $tableData,
         ]);
     }
+
+    public function deleteItemAction()
+    {
+        $jobService = $this->getServiceManager()->get('JobService');
+        try {
+            $jobService->deleteItem($this->params()->fromQuery('id'));
+            return new JsonModel([
+                'success' => true,
+                'textTitle' => 'tr_job_delete_item',
+                'textMessage' => 'tr_job_delete_success',
+            ]);
+        } catch (\Throwable $th) {
+            return new JsonModel([
+                'success' => false,
+                'textTitle' => 'tr_job_delete_item',
+                'textMessage' => $th->getMessage(),
+            ]);
+        }
+    }
 }

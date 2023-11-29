@@ -27,4 +27,12 @@ return [
     'tr_job_unable_to_save' => 'Unable to save Job',
     'tr_job_create_success' => 'Successfully created Job',
     'tr_job_save_success' => 'Successfully saved Job',
+
+    'tr_job_delete_item' => 'Delete Job',
+    'tr_job_common_button_yes' => 'Yes',
+    'tr_job_common_button_no' => 'No',
+    'tr_job_delete_title' => 'Delete this Job?',
+    'tr_job_delete_confirm_msg' => 'This cannot be undone',
+    'tr_job_delete_success' => 'Job Successfully Deleted',
+    'tr_job_delete_fail' => 'Unable to delete job',
 ];

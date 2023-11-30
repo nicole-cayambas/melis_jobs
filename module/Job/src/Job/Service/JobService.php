@@ -55,4 +55,26 @@ class JobService extends MelisGeneralService
         $arrayParameters = $this->sendEvent('job_service_delete_item_end', $arrayParameters);
         return $arrayParameters['result'];
     }
+
+    public function togglePostItem($id)
+    {
+        $arrayParameters = $this->makeArrayFromParameters(__METHOD__, func_get_args());
+        $arrayParameters = $this->sendEvent('job_service_post_item_start', $arrayParameters);
+
+        $jobTable = $this->getServiceManager()->get('JobTable');
+        $jobs = $jobTable->getEntryById($id)->toArray();
+        if (!empty($jobs)) {
+            $job = $jobs[0];
+            $res = $jobTable->save([
+                'posted_at' => date('Y-m-d H:i:s'),
+                'is_posted' => $job['is_posted'] == 1 ? 0 : 1
+            ], $arrayParameters['id']);
+            $arrayParameters['result'] = $res;
+        } else {
+            $arrayParameters['result'] = [];
+        }
+
+        $arrayParameters = $this->sendEvent('job_service_post_item_end', $arrayParameters);
+        return $arrayParameters['result'];
+    }
 }

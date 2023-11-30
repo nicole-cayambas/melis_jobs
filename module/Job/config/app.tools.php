@@ -63,6 +63,11 @@ return [
                                 'text' => 'tr_job_input_posted_at',
                                 'css' => ['width' => '20%'],
                                 'sortable' => true
+                            ],
+                            'is_posted' => [
+                                'text' => 'tr_job_input_is_posted',
+                                'css' => ['width' => '20%'],
+                                'sortable' => true,
                             ]
                         ],
                         // define what columns can be used in searching
@@ -83,6 +88,11 @@ return [
                                 'controller' => 'List',
                                 'action' => 'render-table-action-delete',
                             ],
+                            // 'post' => [
+                            //     'module' => 'Job',
+                            //     'controller' => 'List',
+                            //     'action' => 'render-table-action-post',
+                            // ],
                         ]
                     ],
                     'forms' => [
@@ -156,6 +166,21 @@ return [
                                         ],
                                     ]
                                 ],
+                                // [
+                                //     'spec' => [
+                                //         'name' => 'is_posted',
+                                //         'type' => 'JobPostedStatusSwitch',
+                                //         'options' => [
+                                //             'label' => 'tr_job_input_is_posted',
+                                //             'tooltip' => 'tr_job_input_is_posted_tooltip',
+                                //         ],
+                                //         'attributes' => [
+                                //             'id' => 'is_posted',
+                                //             'class' => 'form-control',
+                                //             'required' => false,
+                                //         ],
+                                //     ]
+                                // ],
                             ]
                         ]
                     ]

@@ -38,6 +38,11 @@ return [
             'Job\Controller\Properties' => Job\Controller\PropertiesController::class,
         ]
     ],
+    'view_helpers' => [
+        'aliases' => [
+            'TableCellStatusHelper' => Job\View\Helper\TableCellStatusHelper::class,
+        ]
+    ],
     'service_manager' => [
         'aliases' => [
             // Service

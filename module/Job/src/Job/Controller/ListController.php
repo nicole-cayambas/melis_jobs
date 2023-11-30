@@ -3,6 +3,7 @@
 namespace Job\Controller;
 
 use DummyPDOQuerySplitter;
+use Job\View\Helper\TableCellStatusHelper;
 use Laminas\Session\Container;
 use Laminas\View\Model\JsonModel;
 use Laminas\View\Model\ViewModel;
@@ -75,7 +76,7 @@ class ListController extends MelisAbstractActionController
         $melisTool = $this->getServiceManager()->get('MelisCoreTool');
         $melisTool->setMelisToolKey('job', 'job_tools');
 
-        $inquiryService = $this->getServiceManager()->get('JobService');
+        $jobService = $this->getServiceManager()->get('JobService');
 
         $draw = 0;
         $dataCount = 0;
@@ -102,15 +103,25 @@ class ListController extends MelisAbstractActionController
             $sortOrder = $this->getRequest()->getPost('order');
             $sortOrder = $sortOrder[0]['dir'];
 
-            $tableData = $inquiryService->getList($start, $length, $melisTool->getSearchableColumns(), $search, $selCol, $sortOrder, $langId)->toArray();
-            $dataCount = $inquiryService->getList(null, null, $melisTool->getSearchableColumns(), $search, null, 'ASC', $langId, true)->current();
+            $tableData = $jobService->getList($start, $length, $melisTool->getSearchableColumns(), $search, $selCol, $sortOrder, $langId)->toArray();
+            $dataCount = $jobService->getList(null, null, $melisTool->getSearchableColumns(), $search, null, 'ASC', $langId, true)->current();
+
+            $finalTableData = [];
+            $statusHelper = new TableCellStatusHelper();
+            foreach ($tableData as $datum) {
+                $temp = $datum;
+                $statusColor = $datum['is_posted'] == 1 ? TableCellStatusHelper::SUCCESS : TableCellStatusHelper::ERROR;
+                $statusText = $datum['is_posted'] == 1 ? 'Yes' : 'No';
+                $temp['is_posted'] = $statusHelper->renderCell($datum['id'], $statusText, 'outlined', $statusColor);
+                $finalTableData[] = $temp;
+            }
         }
 
         return new JsonModel([
             'draw' => (int) $draw,
             'recordsTotal' => count($tableData),
             'recordsFiltered' => $dataCount->totalRecords,
-            'data' => $tableData,
+            'data' => $finalTableData,
         ]);
     }
 
@@ -128,6 +139,25 @@ class ListController extends MelisAbstractActionController
             return new JsonModel([
                 'success' => false,
                 'textTitle' => 'tr_job_delete_item',
+                'textMessage' => $th->getMessage(),
+            ]);
+        }
+    }
+
+    public function togglePostItemAction()
+    {
+        $jobService = $this->getServiceManager()->get('JobService');
+        try {
+            $jobService->togglePostItem($this->params()->fromQuery('id'));
+            return new JsonModel([
+                'success' => true,
+                'textTitle' => 'tr_job_post_item',
+                'textMessage' => 'tr_job_post_success',
+            ]);
+        } catch (\Throwable $th) {
+            return new JsonModel([
+                'success' => false,
+                'textTitle' => 'tr_job_post_item',
                 'textMessage' => $th->getMessage(),
             ]);
         }

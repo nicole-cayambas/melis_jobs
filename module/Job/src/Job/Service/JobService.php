@@ -77,4 +77,10 @@ class JobService extends MelisGeneralService
         $arrayParameters = $this->sendEvent('job_service_post_item_end', $arrayParameters);
         return $arrayParameters['result'];
     }
+
+    public function getCount()
+    {
+        $table = $this->getServiceManager()->get('JobTable');
+        return $table->getCountWhere('is_posted', 1);
+    }
 }

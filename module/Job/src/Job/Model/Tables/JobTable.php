@@ -67,4 +67,15 @@ class JobTable extends MelisGenericTable
 
         return $resultSet;
     }
+
+    public function getCountWhere($column, $value)
+    {
+        $select = $this->getTableGateway()
+        ->getSql()
+        ->select()
+        ->where([$column => $value])
+        ->columns(['count' => new \Laminas\Db\Sql\Expression('COUNT(*)')]);
+
+        return $this->getTableGateway()->selectWith($select)->current()->count;
+    }
 }

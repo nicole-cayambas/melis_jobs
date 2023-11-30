@@ -48,4 +48,8 @@ return [
     'tr_job_unpost_confirm_msg' => 'This job will no longer be visible to everyone.',
     'tr_job_post_success' => 'Job Successfully Posted',
     'tr_job_post_fail' => 'Unable to Post Job',
+
+    // Dashboard Plugin
+    'tr_posted_jobs_counter_name' => 'Posted Jobs Counter',
+    'tr_posted_jobs_counter_description' => 'Counts all of currently posted jobs.'
 ];

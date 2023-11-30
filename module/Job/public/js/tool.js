@@ -98,8 +98,12 @@ $(function () {
     melisCoreTool.confirm(
       translations.tr_job_common_button_yes, // textOk
       translations.tr_job_common_button_no, // textNo
-      $(this).html() == 'Yes' ? translations.tr_job_unpost_title : translations.tr_job_post_title, // title
-      $(this).html() == 'Yes' ? translations.tr_job_unpost_confirm_msg : translations.tr_job_post_confirm_msg, // msg
+      $(this).html() == "Yes"
+        ? translations.tr_job_unpost_title
+        : translations.tr_job_post_title, // title
+      $(this).html() == "Yes"
+        ? translations.tr_job_unpost_confirm_msg
+        : translations.tr_job_post_confirm_msg, // msg
       // callBackOnYes
       // callBackOnNo
       function (data) {
@@ -123,4 +127,9 @@ $(function () {
       },
     });
   };
+
+  // TODO: supposed to open a tab to create a job
+  $("body").on("click", ".createJobBtn", function () {
+    console.log("asdfasdf");
+  });
 });

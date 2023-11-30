@@ -32,6 +32,12 @@ return [
             ],
         ],
     ],
+    'controller_plugins' => [
+        'invokables' => [
+            // Dashboard
+            'PostedJobsCounter' => \Job\Controller\Plugin\Dashboard\PostedJobsCounter::class
+        ]
+    ],
     'controllers' => [
         'invokables' => [
             'Job\Controller\List' => Job\Controller\ListController::class,
@@ -41,6 +47,7 @@ return [
     'view_helpers' => [
         'aliases' => [
             'TableCellStatusHelper' => Job\View\Helper\TableCellStatusHelper::class,
+            'CreateJobBtn' => Job\View\Helper\CreateJobBtn::class
         ]
     ],
     'service_manager' => [
@@ -54,6 +61,8 @@ return [
     'view_manager' => [
         'doctype' => 'HTML5',
         'template_map' => [
+            'Job/counter' => __DIR__ . '/../view/job/plugins/dashboard/posted-jobs-counter.phtml',
+            'Job/create-job-btn' => __DIR__ . '/../view/job/helper/create-job-btn.phtml'
         ],
         'template_path_stack' => [
             __DIR__ . '/../view',

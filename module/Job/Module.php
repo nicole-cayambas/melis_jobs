@@ -20,6 +20,13 @@ class Module
         $sm = $e->getApplication()->getServiceManager();
         $routeMatch = $sm->get('router')->match($sm->get('request'));
 
+        $eventManager->attach(MvcEvent::EVENT_DISPATCH_ERROR, function ($e) {
+            dump($e);
+        });
+        $eventManager->attach(MvcEvent::EVENT_RENDER_ERROR, function ($e) {
+            dump($e);
+        });
+        
         if (!empty($routeMatch)) {
             $routeName = $routeMatch->getMatchedRouteName();
             $module = explode('/', $routeName);
@@ -29,12 +36,7 @@ class Module
                     // attach listeners for Melis
                 }
         }
-        $eventManager->attach(MvcEvent::EVENT_DISPATCH_ERROR, function ($e) {
-            dump($e);
-        });
-        $eventManager->attach(MvcEvent::EVENT_RENDER_ERROR, function ($e) {
-            dump($e);
-        });
+        
     }
 
     public function getConfig()
@@ -44,6 +46,8 @@ class Module
             include __DIR__ . '/config/module.config.php',
             include __DIR__ . '/config/app.interface.php',
             include __DIR__ . '/config/app.tools.php',
+            include __DIR__ . '/config/plugins/dashboard/PostedJobsCounter.config.php',
+            include __DIR__ . '/config/plugins/dashboard/PopularJobs.config.php',
         ];
 
         foreach ($configFiles as $file) {

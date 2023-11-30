@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "914d5ff9e6847325994aa90cdee94e97",
+    "content-hash": "258eed791c3645871e78c682f3785bcd",
     "packages": [
         {
             "name": "brick/varexporter",
@@ -778,6 +778,550 @@
                 }
             ],
             "time": "2022-06-23T10:41:36+00:00"
+        },
+        {
+            "name": "laminas/laminas-cache",
+            "version": "2.13.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-cache.git",
+                "reference": "fc3255833c1c687ed2c5312e9663ef062be155c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-cache/zipball/fc3255833c1c687ed2c5312e9663ef062be155c9",
+                "reference": "fc3255833c1c687ed2c5312e9663ef062be155c9",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-cache-storage-adapter-apc": "^1.0",
+                "laminas/laminas-cache-storage-adapter-apcu": "^1.0",
+                "laminas/laminas-cache-storage-adapter-blackhole": "^1.0",
+                "laminas/laminas-cache-storage-adapter-dba": "^1.0",
+                "laminas/laminas-cache-storage-adapter-ext-mongodb": "^1.0",
+                "laminas/laminas-cache-storage-adapter-filesystem": "^1.0",
+                "laminas/laminas-cache-storage-adapter-memcache": "^1.0",
+                "laminas/laminas-cache-storage-adapter-memcached": "^1.0",
+                "laminas/laminas-cache-storage-adapter-memory": "^1.0",
+                "laminas/laminas-cache-storage-adapter-mongodb": "^1.0",
+                "laminas/laminas-cache-storage-adapter-redis": "^1.0",
+                "laminas/laminas-cache-storage-adapter-session": "^1.0",
+                "laminas/laminas-cache-storage-adapter-wincache": "^1.0",
+                "laminas/laminas-cache-storage-adapter-xcache": "^1.0",
+                "laminas/laminas-cache-storage-adapter-zend-server": "^1.0",
+                "laminas/laminas-eventmanager": "^3.3",
+                "laminas/laminas-servicemanager": "^3.6",
+                "laminas/laminas-stdlib": "^3.3",
+                "laminas/laminas-zendframework-bridge": "^1.0",
+                "php": "^7.3 || ~8.0.0",
+                "psr/cache": "^1.0",
+                "psr/simple-cache": "^1.0"
+            },
+            "conflict": {
+                "symfony/console": "<5.1"
+            },
+            "provide": {
+                "psr/cache-implementation": "1.0",
+                "psr/simple-cache-implementation": "1.0"
+            },
+            "replace": {
+                "zendframework/zend-cache": "^2.9.0"
+            },
+            "require-dev": {
+                "laminas/laminas-cli": "^1.0",
+                "laminas/laminas-coding-standard": "~1.0.0",
+                "laminas/laminas-config-aggregator": "^1.5",
+                "laminas/laminas-feed": "^2.14",
+                "laminas/laminas-serializer": "^2.6",
+                "phpbench/phpbench": "^1.0.0-beta2",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "suggest": {
+                "laminas/laminas-cli": "The laminas-cli binary can be used to consume commands provided by this component",
+                "laminas/laminas-serializer": "Laminas\\Serializer component"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "component": "Laminas\\Cache",
+                    "config-provider": "Laminas\\Cache\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "autoload/patternPluginManagerPolyfill.php"
+                ],
+                "psr-4": {
+                    "Laminas\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Caching implementation with a variety of storage options, as well as codified caching strategies for callbacks, classes, and output",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "cache",
+                "laminas",
+                "psr-16",
+                "psr-6"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-cache/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-cache/issues",
+                "rss": "https://github.com/laminas/laminas-cache/releases.atom",
+                "source": "https://github.com/laminas/laminas-cache"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2021-11-07T13:11:51+00:00"
+        },
+        {
+            "name": "laminas/laminas-cache-storage-adapter-apcu",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-cache-storage-adapter-apcu.git",
+                "reference": "e182aab739d6b03992a9915cc3c7019391a94548"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-cache-storage-adapter-apcu/zipball/e182aab739d6b03992a9915cc3c7019391a94548",
+                "reference": "e182aab739d6b03992a9915cc3c7019391a94548",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ~8.0.0"
+            },
+            "conflict": {
+                "laminas/laminas-cache": "<2.10"
+            },
+            "provide": {
+                "laminas/laminas-cache-storage-implementation": "1.0"
+            },
+            "require-dev": {
+                "ext-apcu": "*",
+                "laminas/laminas-cache": "^2.10.1",
+                "laminas/laminas-cache-storage-adapter-test": "^1.1.1",
+                "laminas/laminas-coding-standard": "~1.0.0",
+                "squizlabs/php_codesniffer": "^2.7"
+            },
+            "suggest": {
+                "ext-apcu": "APCU >= 5.1.0, to use the APCu storage adapter"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Cache\\Storage\\Adapter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Laminas cache adapter for apcu",
+            "keywords": [
+                "cache",
+                "laminas"
+            ],
+            "support": {
+                "docs": "https://docs.laminas.dev/laminas-cache-storage-adapter-apcu/",
+                "forum": "https://discourse.laminas.dev/",
+                "issues": "https://github.com/laminas/laminas-cache-storage-adapter-apcu/issues",
+                "rss": "https://github.com/laminas/laminas-cache-storage-adapter-apcu/releases.atom",
+                "source": "https://github.com/laminas/laminas-cache-storage-adapter-apcu"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2021-05-03T20:41:53+00:00"
+        },
+        {
+            "name": "laminas/laminas-cache-storage-adapter-ext-mongodb",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-cache-storage-adapter-ext-mongodb.git",
+                "reference": "72f68589cc8323fa688167a4720b795dd0907f4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-cache-storage-adapter-ext-mongodb/zipball/72f68589cc8323fa688167a4720b795dd0907f4e",
+                "reference": "72f68589cc8323fa688167a4720b795dd0907f4e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ~8.0.0"
+            },
+            "conflict": {
+                "laminas/laminas-cache": "<2.10",
+                "mongodb/mongodb": "<1.8"
+            },
+            "provide": {
+                "laminas/laminas-cache-storage-implementation": "1.0"
+            },
+            "require-dev": {
+                "laminas/laminas-cache": "^2.10.3",
+                "laminas/laminas-cache-storage-adapter-test": "^1.1.1",
+                "laminas/laminas-coding-standard": "~2.2.0",
+                "laminas/laminas-serializer": "^2.10.1",
+                "mongodb/mongodb": "^1.8.0",
+                "psalm/plugin-phpunit": "^0.16.1",
+                "vimeo/psalm": "^4.9"
+            },
+            "suggest": {
+                "mongodb/mongodb": "MongoDB, to use the ExtMongoDb storage adapter"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Cache\\Storage\\Adapter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Laminas cache adapter for ext-mongodb",
+            "keywords": [
+                "cache",
+                "laminas"
+            ],
+            "support": {
+                "docs": "https://docs.laminas.dev/laminas-cache-storage-adapter-ext-mongodb/",
+                "forum": "https://discourse.laminas.dev/",
+                "issues": "https://github.com/laminas/laminas-cache-storage-adapter-ext-mongodb/issues",
+                "rss": "https://github.com/laminas/laminas-cache-storage-adapter-ext-mongodb/releases.atom",
+                "source": "https://github.com/laminas/laminas-cache-storage-adapter-ext-mongodb"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2021-08-10T18:17:48+00:00"
+        },
+        {
+            "name": "laminas/laminas-cache-storage-adapter-filesystem",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-cache-storage-adapter-filesystem.git",
+                "reference": "76fc488c3fa0ad442e4e70f807305c940d1bdcbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-cache-storage-adapter-filesystem/zipball/76fc488c3fa0ad442e4e70f807305c940d1bdcbc",
+                "reference": "76fc488c3fa0ad442e4e70f807305c940d1bdcbc",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ~8.0.0"
+            },
+            "conflict": {
+                "laminas/laminas-cache": "<2.10"
+            },
+            "provide": {
+                "laminas/laminas-cache-storage-implementation": "1.0"
+            },
+            "require-dev": {
+                "laminas/laminas-cache": "^2.10",
+                "laminas/laminas-cache-storage-adapter-test": "^1.1.1",
+                "laminas/laminas-coding-standard": "~1.0.0",
+                "laminas/laminas-serializer": "^2.10",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^2.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Cache\\Storage\\Adapter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Laminas cache adapter for filesystem",
+            "keywords": [
+                "cache",
+                "laminas"
+            ],
+            "support": {
+                "docs": "https://docs.laminas.dev/laminas-cache-storage-adapter-filesystem/",
+                "forum": "https://discourse.laminas.dev/",
+                "issues": "https://github.com/laminas/laminas-cache-storage-adapter-filesystem/issues",
+                "rss": "https://github.com/laminas/laminas-cache-storage-adapter-filesystem/releases.atom",
+                "source": "https://github.com/laminas/laminas-cache-storage-adapter-filesystem"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2021-04-25T00:27:54+00:00"
+        },
+        {
+            "name": "laminas/laminas-cache-storage-adapter-memcached",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-cache-storage-adapter-memcached.git",
+                "reference": "d05f33e43a352b85c6d0208e9cfbf2a59f02ede3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-cache-storage-adapter-memcached/zipball/d05f33e43a352b85c6d0208e9cfbf2a59f02ede3",
+                "reference": "d05f33e43a352b85c6d0208e9cfbf2a59f02ede3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ~8.0.0"
+            },
+            "conflict": {
+                "laminas/laminas-cache": "<2.10"
+            },
+            "provide": {
+                "laminas/laminas-cache-storage-implementation": "1.0"
+            },
+            "require-dev": {
+                "laminas/laminas-cache": "^2.10",
+                "laminas/laminas-cache-storage-adapter-test": "^1.0.2",
+                "laminas/laminas-coding-standard": "~2.2.0",
+                "phpunit/phpunit": "^9.5.8"
+            },
+            "suggest": {
+                "ext-memcached": "Memcached >= 1.0.0 to use the Memcached storage adapter"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Cache\\Storage\\Adapter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Laminas cache adapter for memcached",
+            "keywords": [
+                "cache",
+                "laminas",
+                "memcached"
+            ],
+            "support": {
+                "docs": "https://docs.laminas.dev/laminas-cache-storage-adapter-memcached/",
+                "forum": "https://discourse.laminas.dev/",
+                "issues": "https://github.com/laminas/laminas-cache-storage-adapter-memcached/issues",
+                "rss": "https://github.com/laminas/laminas-cache-storage-adapter-memcached/releases.atom",
+                "source": "https://github.com/laminas/laminas-cache-storage-adapter-memcached"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2021-08-08T14:51:12+00:00"
+        },
+        {
+            "name": "laminas/laminas-cache-storage-adapter-memory",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-cache-storage-adapter-memory.git",
+                "reference": "02c7a4a1118bbd47d1c0f0bfe1e8b140af79d2bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-cache-storage-adapter-memory/zipball/02c7a4a1118bbd47d1c0f0bfe1e8b140af79d2bd",
+                "reference": "02c7a4a1118bbd47d1c0f0bfe1e8b140af79d2bd",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ~8.0.0"
+            },
+            "conflict": {
+                "laminas/laminas-cache": "<2.10"
+            },
+            "provide": {
+                "laminas/laminas-cache-storage-implementation": "1.0"
+            },
+            "require-dev": {
+                "laminas/laminas-cache": "^2.10.1",
+                "laminas/laminas-cache-storage-adapter-test": "^1.1.1",
+                "laminas/laminas-coding-standard": "^2.1.4",
+                "squizlabs/php_codesniffer": "^3.5.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Cache\\Storage\\Adapter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Laminas cache adapter for memory",
+            "keywords": [
+                "cache",
+                "laminas"
+            ],
+            "support": {
+                "docs": "https://docs.laminas.dev/laminas-cache-storage-adapter-memory/",
+                "forum": "https://discourse.laminas.dev/",
+                "issues": "https://github.com/laminas/laminas-cache-storage-adapter-memory/issues",
+                "rss": "https://github.com/laminas/laminas-cache-storage-adapter-memory/releases.atom",
+                "source": "https://github.com/laminas/laminas-cache-storage-adapter-memory"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2021-04-28T17:27:13+00:00"
+        },
+        {
+            "name": "laminas/laminas-cache-storage-adapter-redis",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-cache-storage-adapter-redis.git",
+                "reference": "de8a63d4a0ef1ccead401eb7fb6d75b57fa3f9ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-cache-storage-adapter-redis/zipball/de8a63d4a0ef1ccead401eb7fb6d75b57fa3f9ee",
+                "reference": "de8a63d4a0ef1ccead401eb7fb6d75b57fa3f9ee",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ~8.0.0"
+            },
+            "conflict": {
+                "laminas/laminas-cache": "<2.10",
+                "phpunit/phpunit": "<6.1.0"
+            },
+            "provide": {
+                "laminas/laminas-cache-storage-implementation": "1.0"
+            },
+            "require-dev": {
+                "composer-runtime-api": "^2",
+                "ext-posix": "*",
+                "ext-redis": "*",
+                "laminas/laminas-cache": "^2.10",
+                "laminas/laminas-cache-storage-adapter-test": "^1.1",
+                "laminas/laminas-coding-standard": "^2.1",
+                "laminas/laminas-serializer": "^2.10",
+                "psalm/plugin-phpunit": "^0.15.1",
+                "vimeo/psalm": "^4.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Cache\\Storage\\Adapter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Laminas cache adapter for redis",
+            "keywords": [
+                "cache",
+                "laminas"
+            ],
+            "support": {
+                "docs": "https://docs.laminas.dev/laminas-cache-storage-adapter-redis/",
+                "forum": "https://discourse.laminas.dev/",
+                "issues": "https://github.com/laminas/laminas-cache-storage-adapter-redis/issues",
+                "rss": "https://github.com/laminas/laminas-cache-storage-adapter-redis/releases.atom",
+                "source": "https://github.com/laminas/laminas-cache-storage-adapter-redis"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2021-06-03T16:14:07+00:00"
+        },
+        {
+            "name": "laminas/laminas-cache-storage-adapter-session",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-cache-storage-adapter-session.git",
+                "reference": "74a275056cfca2300eb9a67cd1d917f7066b4113"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-cache-storage-adapter-session/zipball/74a275056cfca2300eb9a67cd1d917f7066b4113",
+                "reference": "74a275056cfca2300eb9a67cd1d917f7066b4113",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ~8.0.0"
+            },
+            "conflict": {
+                "laminas/laminas-cache": "<2.10"
+            },
+            "provide": {
+                "laminas/laminas-cache-storage-implementation": "1.0"
+            },
+            "require-dev": {
+                "laminas/laminas-cache": "^2.10",
+                "laminas/laminas-cache-storage-adapter-test": "^1.1",
+                "laminas/laminas-coding-standard": "^2.1",
+                "laminas/laminas-session": "^2.7.4"
+            },
+            "suggest": {
+                "laminas/laminas-session": "Laminas\\Session component"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Cache\\Storage\\Adapter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Laminas cache adapter for session",
+            "keywords": [
+                "cache",
+                "laminas"
+            ],
+            "support": {
+                "docs": "https://docs.laminas.dev/laminas-cache-storage-adapter-session/",
+                "forum": "https://discourse.laminas.dev/",
+                "issues": "https://github.com/laminas/laminas-cache-storage-adapter-session/issues",
+                "rss": "https://github.com/laminas/laminas-cache-storage-adapter-session/releases.atom",
+                "source": "https://github.com/laminas/laminas-cache-storage-adapter-session"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2021-05-02T13:52:36+00:00"
         },
         {
             "name": "laminas/laminas-config",
@@ -2352,6 +2896,88 @@
             "time": "2022-02-25T14:13:55+00:00"
         },
         {
+            "name": "laminas/laminas-navigation",
+            "version": "2.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-navigation.git",
+                "reference": "1d29047b49ea978756e6f10921ec3e96f5bc6147"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-navigation/zipball/1d29047b49ea978756e6f10921ec3e96f5bc6147",
+                "reference": "1d29047b49ea978756e6f10921ec3e96f5bc6147",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-stdlib": "^2.7 || ^3.0",
+                "php": "^7.3 || ~8.0.0"
+            },
+            "conflict": {
+                "zendframework/zend-navigation": "*"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "~1.0.0",
+                "laminas/laminas-config": "^2.6 || ^3.1",
+                "laminas/laminas-console": "^2.6",
+                "laminas/laminas-http": "^2.6",
+                "laminas/laminas-i18n": "^2.7.3",
+                "laminas/laminas-log": "^2.9.1",
+                "laminas/laminas-mvc": "^2.7.9 || ^3.0.4",
+                "laminas/laminas-permissions-acl": "^2.6",
+                "laminas/laminas-router": "^3.0.2",
+                "laminas/laminas-servicemanager": "^3.2.1",
+                "laminas/laminas-uri": "^2.5.2",
+                "laminas/laminas-view": "^2.9",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.4.1"
+            },
+            "suggest": {
+                "laminas/laminas-config": "^2.6 || ^3.1, to provide page configuration (optional, as arrays and Traversables are also allowed)",
+                "laminas/laminas-permissions-acl": "^2.6, to provide ACL-based access restrictions to pages",
+                "laminas/laminas-router": "^3.0, to use router-based URI generation with Mvc pages",
+                "laminas/laminas-servicemanager": "^2.7.5 || ^3.0.3, to use the navigation factories",
+                "laminas/laminas-view": "^2.8.1, to use the navigation view helpers"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "component": "Laminas\\Navigation",
+                    "config-provider": "Laminas\\Navigation\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Navigation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Manage trees of pointers to web pages in order to build navigation systems",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "laminas",
+                "navigation"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-navigation/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-navigation/issues",
+                "rss": "https://github.com/laminas/laminas-navigation/releases.atom",
+                "source": "https://github.com/laminas/laminas-navigation"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2021-12-06T01:40:32+00:00"
+        },
+        {
             "name": "laminas/laminas-router",
             "version": "3.5.0",
             "source": {
@@ -2422,6 +3048,76 @@
                 }
             ],
             "time": "2021-10-13T16:02:43+00:00"
+        },
+        {
+            "name": "laminas/laminas-serializer",
+            "version": "2.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-serializer.git",
+                "reference": "2826fd71f202569c169456a4b84297da9ff630cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-serializer/zipball/2826fd71f202569c169456a4b84297da9ff630cd",
+                "reference": "2826fd71f202569c169456a4b84297da9ff630cd",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-json": "^3.1",
+                "laminas/laminas-stdlib": "^3.2",
+                "php": "^7.3 || ~8.0.0 || ~8.1.0"
+            },
+            "conflict": {
+                "zendframework/zend-serializer": "*"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "~2.3.0",
+                "laminas/laminas-math": "^3.3",
+                "laminas/laminas-servicemanager": "^3.6",
+                "phpunit/phpunit": "^9.3"
+            },
+            "suggest": {
+                "laminas/laminas-math": "(^3.3) To support Python Pickle serialization",
+                "laminas/laminas-servicemanager": "(^3.6) To support plugin manager support"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "component": "Laminas\\Serializer",
+                    "config-provider": "Laminas\\Serializer\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Serializer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Serialize and deserialize PHP structures to a variety of representations",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "laminas",
+                "serializer"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-serializer/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-serializer/issues",
+                "rss": "https://github.com/laminas/laminas-serializer/releases.atom",
+                "source": "https://github.com/laminas/laminas-serializer"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2021-12-06T04:52:05+00:00"
         },
         {
             "name": "laminas/laminas-servicemanager",
@@ -2969,6 +3665,130 @@
             "time": "2021-12-21T14:34:37+00:00"
         },
         {
+            "name": "matthiasmullie/minify",
+            "version": "1.3.71",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasmullie/minify.git",
+                "reference": "ae42a47d7fecc1fbb7277b2f2d84c37a33edc3b1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/ae42a47d7fecc1fbb7277b2f2d84c37a33edc3b1",
+                "reference": "ae42a47d7fecc1fbb7277b2f2d84c37a33edc3b1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "matthiasmullie/path-converter": "~1.1",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": ">=2.0",
+                "matthiasmullie/scrapbook": ">=1.3",
+                "phpunit/phpunit": ">=4.8",
+                "squizlabs/php_codesniffer": ">=3.0"
+            },
+            "suggest": {
+                "psr/cache-implementation": "Cache implementation to use with Minify::cache"
+            },
+            "bin": [
+                "bin/minifycss",
+                "bin/minifyjs"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MatthiasMullie\\Minify\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Mullie",
+                    "email": "minify@mullie.eu",
+                    "homepage": "https://www.mullie.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CSS & JavaScript minifier, in PHP. Removes whitespace, strips comments, combines files (incl. @import statements and small assets in CSS files), and optimizes/shortens a few common programming patterns.",
+            "homepage": "https://github.com/matthiasmullie/minify",
+            "keywords": [
+                "JS",
+                "css",
+                "javascript",
+                "minifier",
+                "minify"
+            ],
+            "support": {
+                "issues": "https://github.com/matthiasmullie/minify/issues",
+                "source": "https://github.com/matthiasmullie/minify/tree/1.3.71"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/matthiasmullie",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-04-25T20:33:03+00:00"
+        },
+        {
+            "name": "matthiasmullie/path-converter",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasmullie/path-converter.git",
+                "reference": "e7d13b2c7e2f2268e1424aaed02085518afa02d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasmullie/path-converter/zipball/e7d13b2c7e2f2268e1424aaed02085518afa02d9",
+                "reference": "e7d13b2c7e2f2268e1424aaed02085518afa02d9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MatthiasMullie\\PathConverter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Mullie",
+                    "email": "pathconverter@mullie.eu",
+                    "homepage": "http://www.mullie.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Relative path converter",
+            "homepage": "http://github.com/matthiasmullie/path-converter",
+            "keywords": [
+                "converter",
+                "path",
+                "paths",
+                "relative"
+            ],
+            "support": {
+                "issues": "https://github.com/matthiasmullie/path-converter/issues",
+                "source": "https://github.com/matthiasmullie/path-converter/tree/1.1.3"
+            },
+            "time": "2019-02-05T23:41:09+00:00"
+        },
+        {
             "name": "melisplatform/melis-asset-manager",
             "version": "v5.0.1",
             "source": {
@@ -3023,6 +3843,66 @@
                 "source": "https://github.com/melisplatform/melis-asset-manager"
             },
             "time": "2022-09-26T08:49:23+00:00"
+        },
+        {
+            "name": "melisplatform/melis-cms",
+            "version": "v5.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/melisplatform/melis-cms.git",
+                "reference": "d124b2474699a679a24ec52620cadceb3d4cec11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/melisplatform/melis-cms/zipball/d124b2474699a679a24ec52620cadceb3d4cec11",
+                "reference": "d124b2474699a679a24ec52620cadceb3d4cec11",
+                "shasum": ""
+            },
+            "require": {
+                "melisplatform/melis-core": "^5.0",
+                "melisplatform/melis-engine": "^5.0",
+                "melisplatform/melis-front": "^5.0",
+                "php": "^7.3|^8.0"
+            },
+            "type": "melisplatform-module",
+            "extra": {
+                "module-name": "MelisCms",
+                "dbdeploy": true,
+                "melis-site": false,
+                "melis-module-category": "cms"
+            },
+            "autoload": {
+                "psr-4": {
+                    "MelisCms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Melis Technology",
+                    "email": "contact@melistechnology.com",
+                    "homepage": "https://www.melistechnology.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Melis Platform CMS module",
+            "homepage": "https://github.com/melisplatform/melis-cms",
+            "keywords": [
+                "cms",
+                "melis",
+                "module",
+                "zf2"
+            ],
+            "support": {
+                "docs": "https://www.melistechnology.com/melistechnology/resources/download-documentation/id/17#documentation",
+                "email": "contact@melistechnology.com",
+                "issues": "https://github.com/melisplatform/melis-cms/issues",
+                "source": "https://github.com/melisplatform/melis-cms"
+            },
+            "time": "2022-09-26T08:40:31+00:00"
         },
         {
             "name": "melisplatform/melis-composerdeploy",
@@ -3199,6 +4079,138 @@
                 "source": "https://github.com/melisplatform/melis-dbdeploy"
             },
             "time": "2023-05-24T07:35:03+00:00"
+        },
+        {
+            "name": "melisplatform/melis-engine",
+            "version": "v5.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/melisplatform/melis-engine.git",
+                "reference": "8346f3747f0bb30e0b76b7d8fa215df0f5a852dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/melisplatform/melis-engine/zipball/8346f3747f0bb30e0b76b7d8fa215df0f5a852dc",
+                "reference": "8346f3747f0bb30e0b76b7d8fa215df0f5a852dc",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-cache": "^2.13",
+                "melisplatform/melis-core": "^5.0",
+                "melisplatform/melis-front": "^5.0",
+                "php": "^7.3|^8.0"
+            },
+            "replace": {
+                "laminas/laminas-cache-storage-adapter-apc": "*",
+                "laminas/laminas-cache-storage-adapter-blackhole": "*",
+                "laminas/laminas-cache-storage-adapter-dba": "*",
+                "laminas/laminas-cache-storage-adapter-memcache": "*",
+                "laminas/laminas-cache-storage-adapter-mongodb": "*",
+                "laminas/laminas-cache-storage-adapter-wincache": "*",
+                "laminas/laminas-cache-storage-adapter-xcache": "*",
+                "laminas/laminas-cache-storage-adapter-zend-server": "*"
+            },
+            "type": "melisplatform-module",
+            "extra": {
+                "module-name": "MelisEngine",
+                "dbdeploy": true,
+                "melis-site": false,
+                "melis-module-category": "cms"
+            },
+            "autoload": {
+                "psr-4": {
+                    "MelisEngine\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Melis Technology",
+                    "email": "contact@melistechnology.com",
+                    "homepage": "https://www.melistechnology.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Melis Platform engine module",
+            "homepage": "https://github.com/melisplatform/melis-engine",
+            "keywords": [
+                "cms",
+                "melis",
+                "module",
+                "zf2"
+            ],
+            "support": {
+                "docs": "https://www.melistechnology.com/melistechnology/resources/download-documentation/id/17#documentation",
+                "email": "contact@melistechnology.com",
+                "issues": "https://github.com/melisplatform/melis-engine/issues",
+                "source": "https://github.com/melisplatform/melis-engine"
+            },
+            "time": "2023-05-24T07:49:22+00:00"
+        },
+        {
+            "name": "melisplatform/melis-front",
+            "version": "v5.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/melisplatform/melis-front.git",
+                "reference": "e37dbe42e3619ae6fe181fdb169266cfb46d6238"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/melisplatform/melis-front/zipball/e37dbe42e3619ae6fe181fdb169266cfb46d6238",
+                "reference": "e37dbe42e3619ae6fe181fdb169266cfb46d6238",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-file": "^2.11",
+                "laminas/laminas-navigation": "2.13",
+                "laminas/laminas-serializer": "2.12",
+                "matthiasmullie/minify": "^1.3",
+                "melisplatform/melis-core": "^5.0",
+                "melisplatform/melis-engine": "^5.0",
+                "php": "^7.3|^8.0"
+            },
+            "type": "melisplatform-module",
+            "extra": {
+                "module-name": "MelisFront",
+                "melis-site": false,
+                "melis-module-category": "cms"
+            },
+            "autoload": {
+                "psr-4": {
+                    "MelisFront\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Melis Technology",
+                    "email": "contact@melistechnology.com",
+                    "homepage": "https://www.melistechnology.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Melis Platform front module",
+            "homepage": "https://github.com/melisplatform/melis-front",
+            "keywords": [
+                "cms",
+                "melis",
+                "module",
+                "zf2"
+            ],
+            "support": {
+                "docs": "https://www.melistechnology.com/melistechnology/resources/download-documentation/id/17#documentation",
+                "email": "contact@melistechnology.com",
+                "issues": "https://github.com/melisplatform/melis-front/issues",
+                "source": "https://github.com/melisplatform/melis-front"
+            },
+            "time": "2023-01-09T09:34:21+00:00"
         },
         {
             "name": "melisplatform/melis-installer",
@@ -3484,6 +4496,55 @@
             "time": "2022-02-09T09:50:58+00:00"
         },
         {
+            "name": "psr/cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/cache/tree/master"
+            },
+            "time": "2016-08-06T20:24:11+00:00"
+        },
+        {
             "name": "psr/container",
             "version": "1.1.1",
             "source": {
@@ -3580,6 +4641,57 @@
                 "source": "https://github.com/php-fig/log/tree/1.1.4"
             },
             "time": "2021-05-03T11:20:27+00:00"
+        },
+        {
+            "name": "psr/simple-cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/simple-cache.git",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\SimpleCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interfaces for simple caching",
+            "keywords": [
+                "cache",
+                "caching",
+                "psr",
+                "psr-16",
+                "simple-cache"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/simple-cache/tree/master"
+            },
+            "time": "2017-10-23T01:57:42+00:00"
         },
         {
             "name": "react/promise",

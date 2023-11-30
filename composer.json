@@ -19,7 +19,8 @@
 		"melisplatform/melis-core": "^5.0",
 		"melisplatform/melis-dbdeploy": "^5.0",
 		"melisplatform/melis-installer": "^5.0",
-		"melisplatform/melis-marketplace": "^5.0"
+		"melisplatform/melis-marketplace": "^5.0",
+		"melisplatform/melis-cms": "^5.0"
 	},
 	"scripts": {
 		"post-update-cmd": [

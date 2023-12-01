@@ -6,8 +6,17 @@ use MelisCore\Service\MelisGeneralService;
 
 class JobService extends MelisGeneralService
 {
-    public function getList($start = null, $limit = null, $searchKeys = [], $searchValue = null, $orderKey = null, $order = 'ASC', $langId = 1, $count = false)
-    {
+    public function getList(
+        $start = null,
+        $limit = null,
+        $searchKeys = [],
+        $searchValue = null,
+        $orderKey = null,
+        $order = 'ASC',
+        $langId = 1,
+        $count = false,
+        $whereConditions = []
+    ) {
         $arrayParameters = $this->makeArrayFromParameters(__METHOD__, func_get_args());
         $arrayParameters = $this->sendEvent('job_service_get_list_start', $arrayParameters);
 
@@ -20,7 +29,8 @@ class JobService extends MelisGeneralService
             $arrayParameters['orderKey'],
             $arrayParameters['order'],
             $arrayParameters['langId'],
-            $arrayParameters['count']
+            $arrayParameters['count'],
+            $arrayParameters['whereConditions'],
         );
 
         $arrayParameters['results'] = $list;

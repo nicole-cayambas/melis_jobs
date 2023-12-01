@@ -35,7 +35,9 @@ return [
     'controller_plugins' => [
         'invokables' => [
             // Dashboard
-            'PostedJobsCounter' => \Job\Controller\Plugin\Dashboard\PostedJobsCounter::class
+            'PostedJobsCounter' => \Job\Controller\Plugin\Dashboard\PostedJobsCounter::class,
+            // Site
+            'PopularJobs' => \Job\Controller\Plugin\PopularJobs::class
         ]
     ],
     'controllers' => [
@@ -62,7 +64,10 @@ return [
         'doctype' => 'HTML5',
         'template_map' => [
             'Job/counter' => __DIR__ . '/../view/job/plugins/dashboard/posted-jobs-counter.phtml',
-            'Job/create-job-btn' => __DIR__ . '/../view/job/helper/create-job-btn.phtml'
+            'Job/create-job-btn' => __DIR__ . '/../view/job/helper/create-job-btn.phtml',
+
+            'Job/popular-slider' => __DIR__ . '/../view/job/plugins/popular-slider.phtml',
+            'Job/plugin/modal/modal-template-form' => __DIR__ . '/../view/job/plugins/modal/modal-template-form.phtml',
         ],
         'template_path_stack' => [
             __DIR__ . '/../view',

@@ -4,4 +4,5 @@ return [
     'MelisEngine',
     'MelisFront',
     'MelisJobs',
+    'Job',
 ];

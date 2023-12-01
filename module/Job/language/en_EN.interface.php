@@ -51,5 +51,12 @@ return [
 
     // Dashboard Plugin
     'tr_posted_jobs_counter_name' => 'Posted Jobs Counter',
-    'tr_posted_jobs_counter_description' => 'Counts all of currently posted jobs.'
+    'tr_posted_jobs_counter_description' => 'Counts all of currently posted jobs.',
+
+
+    // Popular Jobs
+    'tr_job_popular_jobs_plugin_name' => 'Popular Jobs',
+    'tr_job_popular_jobs_plugin_description' => 'A list of popular jobs this week.',
+    'tr_popular_jobs_plugin_tab_properties' => 'Properties',
+    'tr_PluginSection_job' => 'Job',
 ];

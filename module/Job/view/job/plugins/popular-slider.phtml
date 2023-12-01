@@ -1,0 +1,14 @@
+<div class="popular-jobs-plugin">
+    <p><strong>Popular Jobs</strong></p>
+    <div class="popular-jobs-container">
+        <?php
+        foreach ($this->popularJobs as $job) {
+            // TODO: Link to job page
+            echo "<a href='https://google.com' target='__blank'><div class='popular-job-card'>
+            <p><strong>{$job['job_title']}</strong></p>
+            <p>{$job['location']}</p>
+        </div></a>";
+        }
+        ?>
+    </div>
+</div>

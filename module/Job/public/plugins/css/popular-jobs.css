@@ -1,0 +1,23 @@
+.popular-jobs-plugin {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 1000px;
+    margin: auto !important;
+}
+
+.popular-jobs-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 2px;
+}
+
+.popular-job-card {
+    outline: 1px solid gray;
+    padding: 6px 16px;
+    border-radius: 10px;
+    min-width: 180px;
+}

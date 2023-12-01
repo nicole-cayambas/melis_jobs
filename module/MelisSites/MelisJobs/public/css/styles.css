@@ -1,20 +1,62 @@
-
-html{
-	margin: auto;
-	width: 1000px;
+* {
+  margin: 0 !important;
+}
+body {
+  background-color: #d0d0d0 !important;
+}
+#content {
+}
+.appBar {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+}
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  height: 100%;
+  margin: auto;
+  width: 1000px;
+}
+.navList {
+  display: flex;
+  gap: 30px;
+}
+.navList > a {
+  text-decoration: none;
+  color: inherit;
+}
+.loginBtn {
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.contentBody {
+  margin: auto !important;
+  width: 1000px;
 }
 
-#leftmenu{
-	float: left;	
-	height: 300px;
-	width: 200px;
-}
 
-#footer{
-	clear: both;
-}
 
-a{
-	text-decoration: none;
-	color: black;
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 20px;
+}
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.hero > div {
+  flex: 1;
 }

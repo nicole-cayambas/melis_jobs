@@ -75,6 +75,7 @@ return [
         'template_map' => [
             'MelisJobs/defaultLayout'  => __DIR__ . '/../view/layout/defaultLayout.phtml',
             'layout/errorLayout'        => __DIR__ . '/../view/error/404.phtml',
+            'layout/menu' => __DIR__ . '/../view/layout/menu.phtml',
 
             // Errors layout
             'error/404'     => __DIR__ . '/../view/error/404.phtml',

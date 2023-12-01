@@ -1,4 +1,16 @@
 <?php
 return [
-    'plugins' => []
+    'plugins' => [
+        'melisfront' => [
+            'plugins' => [
+                'MelisFrontMenuPlugin' => [
+                    'front' => [
+                        'template_path' => [
+                            'layout/menu'
+                        ]
+                    ]
+                ]
+            ]
+        ],
+    ]
 ];

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "258eed791c3645871e78c682f3785bcd",
+    "content-hash": "dce7f3a63c4fd7a77ddfdff7c202d358",
     "packages": [
         {
             "name": "brick/varexporter",
@@ -4326,6 +4326,53 @@
                 "source": "https://github.com/melisplatform/melis-marketplace"
             },
             "time": "2022-06-20T09:42:44+00:00"
+        },
+        {
+            "name": "melisplatform/melis-tool-creator",
+            "version": "v5.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/melisplatform/melis-tool-creator.git",
+                "reference": "d1d72d9597d39a6c7dd7f23b320489ffe826e40a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/melisplatform/melis-tool-creator/zipball/d1d72d9597d39a6c7dd7f23b320489ffe826e40a",
+                "reference": "d1d72d9597d39a6c7dd7f23b320489ffe826e40a",
+                "shasum": ""
+            },
+            "require": {
+                "melisplatform/melis-cms": "^5.0",
+                "melisplatform/melis-core": "^5.0",
+                "php": "^7.3|^8.0"
+            },
+            "type": "melisplatform-module",
+            "extra": {
+                "module-name": "MelisToolCreator",
+                "dbdeploy": true
+            },
+            "autoload": {
+                "psr-4": {
+                    "MelisToolCreator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0"
+            ],
+            "description": "Melis Platform Tool Creator",
+            "homepage": "https://github.com/melisplatform/melis-tool-creator",
+            "keywords": [
+                "cms",
+                "melis",
+                "module",
+                "zf2"
+            ],
+            "support": {
+                "issues": "https://github.com/melisplatform/melis-tool-creator/issues",
+                "source": "https://github.com/melisplatform/melis-tool-creator"
+            },
+            "time": "2022-11-28T09:05:09+00:00"
         },
         {
             "name": "nikic/php-parser",

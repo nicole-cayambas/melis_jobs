@@ -7,7 +7,7 @@
  *
  */
 
-namespace Joblocation\Model\Tables;
+namespace Job\Model\Tables;
 
 use MelisCore\Model\Tables\MelisGenericTable;
 use Laminas\Db\Sql\Expression;

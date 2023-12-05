@@ -7,7 +7,7 @@
  *
  */
 
-namespace Joblocation\Form\Factory;
+namespace Job\Form\Factory;
 
 use Laminas\Form\Element\Checkbox;
 use Psr\Container\ContainerInterface;

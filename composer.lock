@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dce7f3a63c4fd7a77ddfdff7c202d358",
+    "content-hash": "3c481c78dab662a50923132735d4163f",
     "packages": [
         {
             "name": "brick/varexporter",
@@ -3903,6 +3903,53 @@
                 "source": "https://github.com/melisplatform/melis-cms"
             },
             "time": "2022-09-26T08:40:31+00:00"
+        },
+        {
+            "name": "melisplatform/melis-commerce",
+            "version": "v5.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/melisplatform/melis-commerce.git",
+                "reference": "7d9954717174693b5b3ad0e3524ae92cb9cabb27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/melisplatform/melis-commerce/zipball/7d9954717174693b5b3ad0e3524ae92cb9cabb27",
+                "reference": "7d9954717174693b5b3ad0e3524ae92cb9cabb27",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-cache": "^2.13",
+                "melisplatform/melis-core": "^5.0",
+                "php": "^7.3|^8.0"
+            },
+            "type": "melisplatform-module",
+            "extra": {
+                "module-name": "MelisCommerce",
+                "dbdeploy": true
+            },
+            "autoload": {
+                "psr-4": {
+                    "MelisCommerce\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0"
+            ],
+            "description": "Melis Platform Commerce module",
+            "homepage": "https://github.com/melisplatform/melis-commerce",
+            "keywords": [
+                "cms",
+                "melis",
+                "module",
+                "zf2"
+            ],
+            "support": {
+                "issues": "https://github.com/melisplatform/melis-commerce/issues",
+                "source": "https://github.com/melisplatform/melis-commerce"
+            },
+            "time": "2023-11-03T08:59:45+00:00"
         },
         {
             "name": "melisplatform/melis-composerdeploy",

@@ -7,7 +7,7 @@
  *
  */
 
-namespace Joblocation\Listener;
+namespace Job\Listener;
 
 use Laminas\EventManager\EventManagerInterface;
 use Laminas\EventManager\ListenerAggregateInterface;
@@ -15,19 +15,19 @@ use MelisCore\Listener\MelisGeneralListener;
 use Laminas\Session\Container;
 use Laminas\Stdlib\ArrayUtils;
 
-class SavePropertiesListener extends MelisGeneralListener implements ListenerAggregateInterface
+class JobLocationSavePropertiesListener extends MelisGeneralListener implements ListenerAggregateInterface
 {
     public function attach(EventManagerInterface $events, $priority = 1)
     {
         $this->attachEventListener(
             $events,
-            'Joblocation',
+            'Job',
             'joblocation_properties_save_start',
             function($e){
 
                 $result = $this->dispatchPlugin(
                     $e,
-                    'Joblocation\Controller\Properties',
+                    'Job\Controller\JobLocationProperties',
                     ['action' => 'saveProperties']
                 );
 

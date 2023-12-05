@@ -14,8 +14,17 @@ return [
                                             'conf' => [
                                                 'type' => 'job/interface/job_tool_list'
                                             ]
-                                        ]
+                                        ],
                                     ],
+                                ],
+                                'joblocation_tools_section' => [
+                                    'interface' => [
+                                        'list' => [
+                                            'conf' => [
+                                                'type' => 'job/interface/joblocation_tool'
+                                            ]
+                                        ]
+                                    ]
                                 ]
                             ]
                         ]
@@ -56,7 +65,7 @@ return [
                     ],
                     'forward' => [
                         'module' => 'Job',
-                        'controller' => 'List',
+                        'controller' => 'JobsList',
                         'action' => 'render-tool-table',
                     ],
                     'interface' => [
@@ -68,7 +77,7 @@ return [
                             ],
                             'forward' => [
                                 'module' => 'Job',
-                                'controller' => 'List',
+                                'controller' => 'JobsList',
                                 'action' => 'render-tool-table-header',
                             ]
                         ],
@@ -80,7 +89,7 @@ return [
                             ],
                             'forward' => [
                                 'module' => 'Job',
-                                'controller' => 'List',
+                                'controller' => 'JobsList',
                                 'action' => 'render-tool-table-content',
                             ],
                             'interface' => [
@@ -92,7 +101,7 @@ return [
                                     ],
                                     'forward' => [
                                         'module' => 'Job',
-                                        'controller' => 'List',
+                                        'controller' => 'JobsList',
                                         'action' => 'render-table-modal',
                                     ],
                                     'interface' => [
@@ -105,7 +114,7 @@ return [
                                             ],
                                             'forward' => [
                                                 'module' => 'Job',
-                                                'controller' => 'Properties',
+                                                'controller' => 'JobsProperties',
                                                 'action' => 'render-tool-form',
                                             ]
                                         ]
@@ -113,6 +122,85 @@ return [
                                 ],
                             ]
                         ],
+                    ]
+                ],
+                'joblocation_tool' => [
+                    'conf' => [
+                        'id' => 'id_joblocation_tool',
+                        'melisKey' => 'joblocation_tool',
+                        'name' => 'tr_joblocation_title',
+                        'icon' => 'fa fa-puzzle-piece',
+                    ],
+                    'forward' => [
+                        'module' => 'Job',
+                        'controller' => 'JobLocationList',
+                        'action' => 'render-tool',
+                        'jscallback' => '',
+                        'jsdatas' => []
+                    ],
+                    'interface' => [
+                        'joblocation_header' => [
+                            'conf' => [
+                                'id' => 'id_joblocation_header',
+                                'melisKey' => 'joblocation_header',
+                                'name' => 'tr_joblocation_header',
+                            ],
+                            'forward' => [
+                                'module' => 'Job',
+                                'controller' => 'JobLocationList',
+                                'action' => 'render-tool-header',
+                                'jscallback' => '',
+                                'jsdatas' => []
+                            ],
+                        ],
+                        'joblocation_content' => [
+                            'conf' => [
+                                'id' => 'id_joblocation_content',
+                                'melisKey' => 'joblocation_content',
+                                'name' => 'tr_joblocation_content',
+                            ],
+                            'forward' => [
+                                'module' => 'Job',
+                                'controller' => 'JobLocationList',
+                                'action' => 'render-tool-content',
+                                'jscallback' => '',
+                                'jsdatas' => []
+                            ],
+                            'interface' => [
+                                'joblocation_modal' => [
+                                    'conf' => [
+                                        'id' => 'id_joblocation_modal',
+                                        'melisKey' => 'joblocation_modal',
+                                        'name' => 'tr_joblocation_modal',
+                                    ],
+                                    'forward' => [
+                                        'module' => 'Job',
+                                        'controller' => 'JobLocationList',
+                                        'action' => 'render-modal-form',
+                                        'jscallback' => '',
+                                        'jsdatas' => []
+                                    ],
+                                    'interface' => [
+                                        'joblocation_properties_form' => [
+                                            'conf' => [
+                                                'id' => 'id_joblocation_properties_form',
+                                                'melisKey' => 'joblocation_properties_form',
+                                                'name' => 'tr_joblocation_properties',
+                                                'icon' => 'cogwheel'
+                                            ],
+                                            'forward' => [
+                                                'module' => 'Job',
+                                                'controller' => 'JobLocationProperties',
+                                                'action' => 'render-properties-form',
+                                                'jscallback' => '',
+                                                'jsdatas' => []
+                                            ]
+                                        ],
+                                        #TCTOOLINTERFACE
+                                    ]
+                                ]
+                            ]
+                        ]
                     ]
                 ]
             ]

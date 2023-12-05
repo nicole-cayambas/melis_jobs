@@ -7,7 +7,7 @@
  *
  */
 
-namespace Joblocation\Service;
+namespace Job\Service;
 
 use MelisCore\Service\MelisGeneralService;
 use Laminas\Session\Container;

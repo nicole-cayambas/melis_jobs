@@ -7,7 +7,7 @@
  *
  */
 
-namespace Joblocation\Controller;
+namespace Job\Controller;
 
 
 use Laminas\Session\Container;
@@ -15,7 +15,7 @@ use Laminas\View\Model\JsonModel;
 use Laminas\View\Model\ViewModel;
 use MelisCore\Controller\MelisAbstractActionController;
 
-class ListController extends MelisAbstractActionController
+class JobLocationListController extends MelisAbstractActionController
 {
     public function renderToolAction()
     {
@@ -34,7 +34,7 @@ class ListController extends MelisAbstractActionController
         $view = new ViewModel();
 
         $melisTool = $this->getServiceManager()->get('MelisCoreTool');
-        $melisTool->setMelisToolKey('joblocation', 'joblocation_tools');
+        $melisTool->setMelisToolKey('job', 'joblocation_tools');
 
         $columns = $melisTool->getColumns();
         $translator = $this->getServiceManager()->get('translator');
@@ -49,7 +49,7 @@ class ListController extends MelisAbstractActionController
     public function getListAction()
     {
         $melisTool = $this->getServiceManager()->get('MelisCoreTool');
-        $melisTool->setMelisToolKey('joblocation', 'joblocation_tools');
+        $melisTool->setMelisToolKey('job', 'joblocation_tools');
 
         $joblocationService = $this->getServiceManager()->get('JoblocationService');
 

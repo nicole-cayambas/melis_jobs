@@ -42,8 +42,15 @@ return [
     ],
     'controllers' => [
         'invokables' => [
-            'Job\Controller\List' => Job\Controller\ListController::class,
-            'Job\Controller\Properties' => Job\Controller\PropertiesController::class,
+            'Job\Controller\JobsList' => Job\Controller\JobsListController::class,
+            'Job\Controller\JobsProperties' => Job\Controller\JobsPropertiesController::class,
+            'Job\Controller\JobLocationList' => \Job\Controller\JobLocationListController::class,
+            'Job\Controller\JobLocationProperties' => \Job\Controller\JobLocationPropertiesController::class,
+        ]
+    ],
+    'form_elements' => [
+        'factories' => [
+            'MelisCheckbox' => \Job\Form\Factory\MelisCheckboxFactory::class,
         ]
     ],
     'view_helpers' => [
@@ -56,8 +63,10 @@ return [
         'aliases' => [
             // Service
             'JobService' => \Job\Service\JobService::class,
+            'JoblocationService' => \Job\Service\JoblocationService::class,
             // Table
-            'JobTable' => \Job\Model\Tables\JobTable::class
+            'JobTable' => \Job\Model\Tables\JobTable::class,
+            'JoblocationTable' => \Job\Model\Tables\JoblocationTable::class
         ]
     ],
     'view_manager' => [

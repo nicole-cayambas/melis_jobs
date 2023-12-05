@@ -7,25 +7,25 @@
  *
  */
 
-namespace Joblocation\Listener;
+namespace Job\Listener;
 
 use Laminas\EventManager\EventManagerInterface;
 use Laminas\EventManager\ListenerAggregateInterface;
 use MelisCore\Listener\MelisGeneralListener;
 
-class DeleteListener extends MelisGeneralListener implements ListenerAggregateInterface
+class JobLocationDeleteListener extends MelisGeneralListener implements ListenerAggregateInterface
 {
     public function attach(EventManagerInterface $events, $priority = 1)
     {
         $this->attachEventListener(
             $events,
-            'Joblocation',
+            'Job',
             'joblocation_delete_end',
             function($e){
 
                 $this->dispatchPlugin(
                     $e,
-                    'Joblocation\Controller\Properties',
+                    'Job\Controller\JobLocationProperties',
                     ['action' => 'delete']
                 );
 

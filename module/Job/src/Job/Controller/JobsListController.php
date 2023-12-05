@@ -9,7 +9,7 @@ use Laminas\View\Model\JsonModel;
 use Laminas\View\Model\ViewModel;
 use MelisCore\Controller\MelisAbstractActionController;
 
-class ListController extends MelisAbstractActionController
+class JobsListController extends MelisAbstractActionController
 {
     public function renderToolTableAction()
     {

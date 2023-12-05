@@ -6,7 +6,7 @@ use Laminas\View\Model\JsonModel;
 use Laminas\View\Model\ViewModel;
 use MelisCore\Controller\MelisAbstractActionController;
 
-class PropertiesController extends MelisAbstractActionController
+class JobsPropertiesController extends MelisAbstractActionController
 {
     public function renderToolFormAction()
     {

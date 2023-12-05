@@ -34,6 +34,8 @@ class Module
             if (!empty($module[0]))
                 if ($module[0] == 'melis-backoffice') {
                     // attach listeners for Melis
+                    (new \Job\Listener\JobLocationSavePropertiesListener())->attach($eventManager);
+                    (new \Job\Listener\JobLocationDeleteListener())->attach($eventManager);
                 }
         }
         

@@ -7,14 +7,14 @@
  *
  */
 
-namespace Joblocation\Controller;
+namespace Job\Controller;
 
 use Laminas\View\Model\ViewModel;
 use Laminas\View\Model\JsonModel;
 use Laminas\Session\Container;
 use MelisCore\Controller\MelisAbstractActionController;
 
-class PropertiesController extends MelisAbstractActionController
+class JobLocationPropertiesController extends MelisAbstractActionController
 {
 
     public function renderPropertiesFormAction()
@@ -180,7 +180,7 @@ class PropertiesController extends MelisAbstractActionController
     private function getForm()
     {
         $melisCoreConfig = $this->getServiceManager()->get('MelisCoreConfig');
-        $appConfigForm = $melisCoreConfig->getFormMergedAndOrdered('joblocation/tools/joblocation_tools/forms/joblocation_property_form', 'joblocation_property_form');
+        $appConfigForm = $melisCoreConfig->getFormMergedAndOrdered('job/tools/joblocation_tools/forms/joblocation_property_form', 'joblocation_property_form');
 
         // Factoring Joblocation event and pass to view
         $factory = new \Laminas\Form\Factory();

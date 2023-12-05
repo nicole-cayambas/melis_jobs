@@ -64,7 +64,7 @@ $(function () {
 
     $.ajax({
       type: "POST",
-      url: "/melis/Job/JobLocationProperties/save",
+      url: "/melis/Job/JobsProperties/save",
       data: formData,
       cache: false,
       contentType: false,

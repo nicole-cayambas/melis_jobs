@@ -19,8 +19,19 @@ class PopularJobs extends MelisTemplatingPlugin
         $jobSrv = $this->getServiceManager()->get('JobService');
         $popularJobs = $jobSrv->getList(null, null, [], null, null, 'ASC', 1, false, ['is_posted', 1])->toArray();
 
+        $finalPopularJobs = [];
+        foreach($popularJobs AS $job) {
+            $temp = $job;
+            $locationText = $job['location'];
+            if($job['is_remote']) {
+                $locationText .= ' (Remote)';
+            }
+            $temp['location'] = $locationText;
+            $finalPopularJobs[] = $temp;
+        }
+
         return [
-            'popularJobs' => $popularJobs,
+            'popularJobs' => $finalPopularJobs,
             'renderMode' => $this->renderMode,
             'previewMode' => $this->previewMode,
         ];

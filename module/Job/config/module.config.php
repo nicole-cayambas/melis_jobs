@@ -51,12 +51,13 @@ return [
     'form_elements' => [
         'factories' => [
             'MelisCheckbox' => \Job\Form\Factory\MelisCheckboxFactory::class,
+            'JobLocationSelect' => \Job\Form\Factory\JobLocationSelectFactory::class
         ]
     ],
     'view_helpers' => [
         'aliases' => [
             'TableCellStatusHelper' => Job\View\Helper\TableCellStatusHelper::class,
-            'CreateJobBtn' => Job\View\Helper\CreateJobBtn::class
+            'CreateJobBtn' => Job\View\Helper\CreateJobBtn::class,
         ]
     ],
     'service_manager' => [

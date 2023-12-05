@@ -42,10 +42,19 @@ class JobTable extends MelisGenericTable
             $slct = [new Expression('COUNT(' . $this->getTableGateway()->getTable() . '.' . $this->idField . ') As totalRecords')];
         }
 
-        
+
         $select->columns($slct);
-        
-        if(!empty($whereConditions)) {
+
+        $jobLocationsTable = JoblocationTable::TABLE;
+        $jobsTable = self::TABLE;
+        $select->join(
+            $jobLocationsTable,
+            "{$jobsTable}.location = {$jobLocationsTable}.id",
+            ["location", "is_remote"],
+            $select::JOIN_INNER
+        );
+
+        if (!empty($whereConditions)) {
             $select->where($whereConditions);
         }
 

@@ -36,6 +36,7 @@ class Module
                     // attach listeners for Melis
                     (new \Job\Listener\JobLocationSavePropertiesListener())->attach($eventManager);
                     (new \Job\Listener\JobLocationDeleteListener())->attach($eventManager);
+                    (new \Job\Listener\JobTableColumnDisplayListener())->attach($eventManager);
                 }
         }
         

@@ -154,7 +154,7 @@ return [
                                 [
                                     'spec' => [
                                         'name' => 'location',
-                                        'type' => 'MelisText',
+                                        'type' => 'JobLocationSelect',
                                         'options' => [
                                             'label' => 'tr_job_input_location',
                                             'tooltip' => 'tr_job_input_location_tooltip',

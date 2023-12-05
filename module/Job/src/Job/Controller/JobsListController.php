@@ -106,6 +106,8 @@ class JobsListController extends MelisAbstractActionController
             $tableData = $jobService->getList($start, $length, $melisTool->getSearchableColumns(), $search, $selCol, $sortOrder, $langId)->toArray();
             $dataCount = $jobService->getList(null, null, $melisTool->getSearchableColumns(), $search, null, 'ASC', $langId, true)->current();
 
+            $coreSrv = $this->getServiceManager()->get('MelisGeneralService');
+
             $finalTableData = [];
             $statusHelper = new TableCellStatusHelper();
             foreach ($tableData as $datum) {
@@ -113,6 +115,7 @@ class JobsListController extends MelisAbstractActionController
                 $statusColor = $datum['is_posted'] == 1 ? TableCellStatusHelper::SUCCESS : TableCellStatusHelper::ERROR;
                 $statusText = $datum['is_posted'] == 1 ? 'Yes' : 'No';
                 $temp['is_posted'] = $statusHelper->renderCell($datum['id'], $statusText, 'outlined', $statusColor);
+                $temp['location'] = $coreSrv->sendEvent('job_location_display_location', ['data' => $datum])['data'];
                 $finalTableData[] = $temp;
             }
         }

@@ -62,11 +62,12 @@ class JobTable extends MelisGenericTable
         if (!empty($searchValue)) {
 
             $search = [];
-            foreach ($searchKeys as $col)
-                $search[$col] = new Like($col, '%' . $searchValue . '%');
+            foreach ($searchKeys as $col) {
+                $tableCol = self::TABLE . '.' . $col;
+                $search[$col] = new Like($tableCol, '%' . $searchValue . '%');
+            }
 
             $filters = [new PredicateSet($search, PredicateSet::COMBINED_BY_OR)];
-
             $select->where($filters);
         }
 

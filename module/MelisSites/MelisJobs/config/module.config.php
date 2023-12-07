@@ -4,7 +4,7 @@ return [
     'router' => [
         'routes' => [
             'MelisJobs-home' => [
-                'type'    => 'regex',
+                      'type'    => 'regex',
                 'options' => [
                     'regex'    => '.*/MelisJobs/.*/id/(?<idpage>[0-9]+)',
                     'defaults' => [
@@ -62,6 +62,8 @@ return [
     'controllers' => [
         'invokables' => [
             'MelisJobs\Controller\Home'    => MelisJobs\Controller\HomeController::class,
+            'MelisJobs\Controller\JobsPage' => MelisJobs\Controller\JobsPageController::class,
+            'MelisJobs\Controller\ContactPage' => MelisJobs\Controller\ContactPageController::class,
             'MelisJobs\Controller\Page404' => MelisJobs\Controller\Page404Controller::class
         ],
     ],
@@ -80,9 +82,3 @@ return [
             // Errors layout
             'error/404'     => __DIR__ . '/../view/error/404.phtml',
             'error/index'   => __DIR__ . '/../view/error/index.phtml',
-        ],
-        'template_path_stack' => [
-            __DIR__ . '/../view',
-        ],
-    ],
-];

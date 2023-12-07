@@ -1,10 +1,19 @@
+<?php
+$pages = array_filter($this->menu[0]['pages'], function ($page) {
+    return $page['pageType'] === 'PAGE';
+});
+?>
 <div class="appBar">
     <div class="toolbar">
-        <h1>MelisJobs</h1>
+        <h1>
+            <?= $this->menu[0]['label']; ?>
+        </h1>
         <div class="navList">
-            <a href="">Jobs</a>
-            <a href="">Contact</a>
-            <a href="">About Us</a>
+            <?php
+            foreach ($pages as $page) {
+                echo "<a href='{$page["uri"]}'>{$page['label']}</a>";
+            }
+            ?>
         </div>
         <button class="loginBtn">Login</button>
     </div>

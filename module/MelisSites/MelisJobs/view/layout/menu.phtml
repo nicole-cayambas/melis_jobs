@@ -1,7 +1,25 @@
 <?php
-$pages = array_filter($this->menu[0]['pages'], function ($page) {
-    return $page['pageType'] === 'PAGE';
-});
+function getPages($pages)
+{
+    $pages = filterPages($pages);
+    if (empty($pages)) return;
+
+    foreach ($pages as $page) {
+        if (str_starts_with($page['uri'], substr($_SERVER['REQUEST_URI'], 0, 3))) {
+            echo "<a href='{$page["uri"]}'>{$page['label']}</a>";
+        }
+        if (!empty($page['pages'])) {
+            getPages($page['pages']);
+        }
+    }
+}
+function filterPages($pages)
+{
+    return array_filter($pages, function ($page) {
+        return $page['pageType'] === 'PAGE';
+    });
+}
+
 ?>
 <div class="appBar">
     <div class="toolbar">
@@ -10,9 +28,7 @@ $pages = array_filter($this->menu[0]['pages'], function ($page) {
         </h1>
         <div class="navList">
             <?php
-            foreach ($pages as $page) {
-                echo "<a href='{$page["uri"]}'>{$page['label']}</a>";
-            }
+            getPages($this->menu[0]['pages']);
             ?>
         </div>
         <button class="loginBtn">Login</button>
